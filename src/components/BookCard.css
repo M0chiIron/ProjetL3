@@ -1,0 +1,30 @@
+.book-card {
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    height: auto;
+  }
+
+.book-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .book-cover {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .book-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #f0f0f0;
+  }
+  
+  .book-author {
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
