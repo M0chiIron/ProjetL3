@@ -31,7 +31,7 @@ const SearchPage = () => {
   }, [query]);
 
   return (
-    <div className="search-page">
+    <div className="search-page mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Search Results for "{query}"</h1>
       <div className="book-list-search">
         {books.map((book) => (
@@ -47,7 +47,9 @@ const SearchPage = () => {
             />
             <div className="book-details">
               <h2 className="book-title">{book.title}</h2>
-              <p className="book-author">{book.author_name.join(", ")}</p>
+              <p className="book-author">
+                {book.author_name ? book.author_name.join(", ") : "Unknown Author"}
+              </p>
               <Rating name="read-only" value={3} readOnly />
             </div>
             <button className="read-button hover:bg-gray-600">Lire</button>

@@ -15,18 +15,18 @@ const Homepage = () => {
   const [books, setBooks] = useState<Book[]>([]);
 
   useEffect(() => {
-    const fetchBooks = async () => {
+    const fetchPopularBooks = async () => {
       try {
-        const response = await axios.get(
-          "https://openlibrary.org/search.json?subject=fiction&limit=5"
-        );
-        setBooks(response.data.docs.slice(0, 5));
+        const response = await axios.get("/api/popular-books");
+        if (response.data.success) {
+          setBooks(response.data.books);
+        }
       } catch (error) {
-        console.error("Error fetching books:", error);
+        console.error("Error fetching popular books:", error);
       }
     };
 
-    fetchBooks();
+    fetchPopularBooks();
   }, []);
 
   return (
@@ -34,18 +34,18 @@ const Homepage = () => {
       <h1 className="text-2xl font-bold mb-4">Livres "Populaires"</h1>
       <div className="book-list">
         {books.map((book) => (
-            <Link
+          <Link
             key={book.key}
             to={`/book/${encodeURIComponent(book.key.split('/').pop() || '')}`}
             className="book-card"
           >
             <BookCard
-                key={book.key}
-                title={book.title}
-                author_name={book.author_name}
-                cover_i={book.cover_i}
+              key={book.key}
+              title={book.title}
+              author_name={book.author_name}
+              cover_i={book.cover_i}
             />
-            </Link>
+          </Link>
         ))}
       </div>
     </div>

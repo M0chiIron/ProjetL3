@@ -54,3 +54,13 @@
   color: #00ff00;
   margin-bottom: 20px;
 }
+
+.book-card-container {
+  display: inline-block; /* Maintient la taille de la carte */
+}
+
+.book-card-link {
+  text-decoration: none; /* Supprime le soulignement du lien */
+  color: inherit; /* Conserve la couleur du texte */
+  display: block; /* Empêche les styles inline de modifier la taille */
+}

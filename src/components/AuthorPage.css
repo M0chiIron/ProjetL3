@@ -1,0 +1,108 @@
+.author-page {
+    padding: 2rem;
+    color: #f0f0f0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .author-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+  
+  .author-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .author-info {
+    flex: 1;
+  }
+  
+  .author-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #f0f0f0;
+  }
+  
+  .author-birth {
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .author-bio {
+    line-height: 1.6;
+    font-size: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #444;
+  }
+  
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .book-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .book-card {
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .book-cover {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+  }
+  
+  .book-title {
+    font-size: 1rem;
+    margin: 0.75rem 0.5rem 0.25rem;
+    color: #f0f0f0;
+    line-height: 1.3;
+  }
+  
+  .book-year {
+    color: #aaa;
+    font-size: 0.85rem;
+    margin: 0 0.5rem 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .author-header {
+      flex-direction: column;
+    }
+    
+    .books-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }

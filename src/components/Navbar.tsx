@@ -20,12 +20,6 @@ const Navbar = () => {
     navigate(`/search/${search}`);
   };
 
-  const handleAvatarClick = () => {
-    if (!isLoggedIn) {
-      navigate("/login");
-    }
-  };
-
   const handleLogout = async () => {
     try {
       await axios.post("/api/logout");
@@ -36,6 +30,10 @@ const Navbar = () => {
     }
   };
 
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <nav className="bg-black text-white w-full">
       <div className="flex justify-between items-center p-4 container mx-auto">
@@ -43,12 +41,20 @@ const Navbar = () => {
           BookClub
         </Link>
         <div className="flex items-center">
-          <div className="dropdown" onClick={handleAvatarClick}>
+          <div className="dropdown">
             <Avatar />
             <div className="dropdown-content bg-gray-800 p-2 rounded-md">
-              <p className="hover:bg-gray-900">Profile</p>
-              <p className="hover:bg-gray-900">Settings</p>
-              <p className="hover:bg-gray-900" onClick={handleLogout}>Logout</p>
+              {isLoggedIn ? (
+                <>
+                  <p className="hover:bg-gray-900 p-2 cursor-pointer">Profile</p>
+                  <p className="hover:bg-gray-900 p-2 cursor-pointer">Settings</p>
+                  <p className="hover:bg-gray-900 p-2 cursor-pointer" onClick={handleLogout}>Logout</p>
+                </>
+              ) : (
+                <>
+                  <p className="hover:bg-gray-900 p-2 cursor-pointer" onClick={handleLogin}>Login</p>
+                </>
+              )}
             </div>
           </div>
           <Link to="/library" className="ml-2 text-white">
