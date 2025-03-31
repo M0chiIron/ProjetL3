@@ -10,11 +10,12 @@ const app = express();
 const port = 3000;
 const { Pool } = pg;
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, // Utilise l'URL de la base de données Render
+  connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false, // Nécessaire pour Render
+    rejectUnauthorized: false,
   },
 });
+
 
 app.use(bodyParser.json());
 app.use(

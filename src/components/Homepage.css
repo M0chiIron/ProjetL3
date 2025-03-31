@@ -14,27 +14,3 @@
     margin-top: 20px;
   }
   
-  .book-card {
-    background-color: #333; 
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 200px;
-    text-align: center;
-  }
-  
-  .book-cover {
-    width: 100%;
-    height: auto;
-  }
-  
-  .book-title {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #f0f0f0; 
-  }
-  
-  .book-author {
-    color: #aaa; 
-    margin-bottom: 10px;
-  }

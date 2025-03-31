@@ -6,6 +6,7 @@
     width: 200px;
     text-align: center;
     height: auto;
+    transition: box-shadow 0.3s ease;
   }
 
 .book-card:hover {
@@ -18,7 +19,7 @@
   }
   
   .book-title {
-    font-size: 1.2em;
+    font-size: 0.9em;
     margin: 10px 0;
     color: #f0f0f0;
   }
