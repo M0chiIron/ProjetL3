@@ -31,7 +31,7 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-      <h1 className="text-2xl font-bold mb-4">Livres "Populaires"</h1>
+      <h1 className="text-2xl font-bold mb-4">Livres Populaires</h1>
       <div className="book-list">
         {books.map((book) => (
           <Link

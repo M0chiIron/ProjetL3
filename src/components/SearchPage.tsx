@@ -21,7 +21,7 @@ const SearchPage = () => {
         const response = await axios.get(
           `https://openlibrary.org/search.json?q=${query}`
         );
-        setBooks(response.data.docs.slice(0, 10));
+        setBooks(response.data.docs.slice(0, 16));
       } catch (error) {
         console.error("Error fetching books:", error);
       }
@@ -32,7 +32,7 @@ const SearchPage = () => {
 
   return (
     <div className="search-page mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Search Results for "{query}"</h1>
+      <h1 className="text-2xl font-bold mb-4">Résultats pour "{query}"</h1>
       <div className="book-list-search">
         {books.map((book) => (
           <Link
