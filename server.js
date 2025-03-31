@@ -10,10 +10,11 @@ const app = express();
 const port = 3000;
 const { Pool } = pg;
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  user: "postgres",
+  host: "localhost",
+  database: "Projet",
+  password: "projetl3",
+  port: 5432,
 });
 
 
